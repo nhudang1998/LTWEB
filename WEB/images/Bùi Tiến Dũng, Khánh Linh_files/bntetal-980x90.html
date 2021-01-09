@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- saved from url=(0727)https://img.vietnamnetad.vn/html/2021/1/tetnd/bntetal-980x90/bntetal-980x90/bntetal-980x90.html?clickVNN=https://log.vads.net.vn/ad/click-tracking?action_name=iK@Z3OFSTgreLcF0plOYvTzDl4Es_@$_q2Mjc_@$_5AufLUDivBivpsQ8BAB3bTenwvP9yGRVe8J9kBfxSDNiA2dfP1yAyHo405gfJTxETE2QC1gTXP_@$_5arqkRwWdoz33aEWmVAQ6lyZ2D761ArNeLAgwUO4h44kcGBQROWRBj0mf8nulXtjnMWNjSZvt@o1nZgGtar1YnqcIpW_@$_cGQjTbPfguegshTvI2kVZ8j3G@gVO4@NJv5mhCloHW@QiQy1DYfooIDkbU5jwr0HMNc9Pq07U6GGDjIrgX8BUTns0rbk7slOfEbVQr9JnLUSB7KpjVWKWZdgfGHBob3yquGUkgUfjWBajoNxaVkMqhTkEYst3V50f7BAK9JDE6jjCPQi9KITB4J4YuoBU8e2wTiUYdTwpSRmQORWAO109rBsoew1o0MZM2TNfTIylZP3nagpEZJmCtTDS5ccWMeB6jd0wFCKmjKXpAvS1OBb2AC3boVr@tEUTXWKaJB2s0MyEmo8ykqKJQGsrlyhgN@I8yuZP1dt1e4NLeeIZPEizLGAUIK2EWFik= -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="authoring-tool" content="Adobe_Animate_CC">
+<title>bntetal-980x90</title>
+<!-- write your code here -->
+<script src="./createjs.min.js.download"></script>
+<script src="./bntetal-980x90.js.download"></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("9E9B73E10EDA5C4CAE49D05876DFB502");
+	var lib=comp.getLibrary();
+	createjs.MotionGuidePlugin.install();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib.bntetal980x90();
+	stage = new lib.Stage(canvas);
+	stage.enableMouseOver();	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.setFPS(lib.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	function makeResponsive(isResp, respDim, isScale, scaleType) {		
+		var lastW, lastH, lastS=1;		
+		
+	}
+	makeResponsive(false,'both',false,1);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+<!-- write your code here -->
+</head>
+<body onload="init();" style="margin:0px;" marginwidth="0" marginheight="0">
+	<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:980px; height:90px">
+		<canvas id="canvas" width="980" height="90" style="position: absolute; display: block; background-color: rgb(255, 255, 255); cursor: pointer;"></canvas>
+		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:980px; height:90px; position: absolute; left: 0px; top: 0px; display: block;">
+		</div>
+	</div>
+
+</body></html>

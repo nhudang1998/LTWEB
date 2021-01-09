@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- saved from url=(0117)https://embed.vietnamnettv.vn/vastxml/irplayer1.html?vast=https://vast.vietnamnetjsc.vn/?tag=vnninreadpn-20201119.xml -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <title>inread ads player</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #000;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="./client.js.download" async="" type="text/javascript"></script><script src="./jquery-1.10.2.min.js(1).download"></script>
+    <script src="./rmp.min.js(1).download"></script>
+    <script>
+        function getQuery(name, url) {
+            if (!url) url = location.href;
+            name = name.replace(/[[]/, "\[").replace(/[]]/, "\]");
+            var regexS = "[\?&]" + name + "=([^&#]*)";
+            var regex = new RegExp(regexS);
+            var results = regex.exec(url);
+            return results == null ? null : results[1];
+        }
+        function InitAds(contentId, vast) {
+            var rmp = new RadiantMP(contentId);
+            var rmpContainer = document.getElementById(contentId);
+            var labels = {
+                ads: {
+                    controlBarCustomMessage: 'Ad',
+                    skipMessage: 'Skip this ad',
+                    skipWaitingMessage: 'Skip this ad in'
+                }
+            };
+            rmpContainer.addEventListener('ready', function () {
+                // player is ready
+                console.log('inread ads ready');
+            });
+            rmpContainer.addEventListener('adstarted', function () {
+                console.log('inread ads played-start!');
+                parent.postMessage({ "openAds": true }, "*");
+            });
+            rmpContainer.addEventListener('adskipped', function () {
+                console.log('adskipped!');
+                parent.postMessage({ "closeAds": true }, "*");
+            });
+            rmpContainer.addEventListener('adcomplete', function () {
+                console.log('adcomplete!');
+                parent.postMessage({ "closeAds": true }, "*");
+            });
+            rmpContainer.addEventListener('adblockerdetected', function () {
+                console.log('adblockerdetected!');
+                parent.postMessage({ "closeAds": true }, "*");
+            });
+            rmpContainer.addEventListener('aderror', function () {
+                console.log(rmp.getAdErrorMessage());
+                parent.postMessage({ "closeAds": true }, "*");
+            });
+            rmpContainer.addEventListener('ended', function () {
+                console.log('ended');
+                parent.postMessage({ "closeAds": true }, "*");
+            });
+            rmp.init({
+                licenseKey: 'Kl8lOXN2N2s9aWt2Nzc5MjlrP3JvbTVkYXNpczMwZGIwQSVfKg==',
+                iframeMode: true,
+                iframeAllowed: true,
+                skin: 'outstream',
+                backgroundColor: 'DDDDDD',
+                ads: true,
+                viewablePlayPause: true,
+                muted: true,
+                adOutStream: true,
+                adSkipButton: true,
+                adSkipOffset: 6,
+                labels: labels,
+                adTagUrl: vast,
+                pathToRmpFiles: 'https://embed.vietnamnettv.vn/rmp/v5100/'
+            });
+        }
+    </script>
+<link id="rmp-dress-code" type="text/css" rel="stylesheet" href="./rmp-s1.min.css"><style type="text/css">google-cast-launcher {--disconnected-color: rgba(255, 255, 255, 1);--connected-color: rgba(130, 177, 255, 1);} google-cast-launcher:hover {--disconnected-color: rgba(130, 177, 255, 1);}</style><style type="text/css">.rmp-desktop-volume-container {-webkit-transition-delay:400ms;-moz-transition-delay:400ms;transition-delay:400ms;}</style><script async="" src="./ima3.js.download"></script></head> 
+<body marginwidth="0" marginheight="0" style="">
+<div id="vnnplayer" class="rmp-container rmp-color-button rmp-ad-outstream rmp-chrome rmp-medium" style="background-color: rgb(221, 221, 221); width: 100%; height: 100%;" role="application" tabindex="0">
+<div class="rmp-content"><video class="rmp-object-fit-contain rmp-video" tabindex="-1" x-webkit-airplay="allow" playsinline="true"></video><div class="rmp-ad-preroll-mask" style="background-color: rgb(221, 221, 221);"></div><div class="rmp-poster rmp-no-display" style="background-color: rgb(221, 221, 221);"><img class="rmp-poster-img rmp-object-fit-contain" alt="Media player poster frame" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="></div></div><div class="rmp-ad-container"><div style="position: absolute;"><div style="display: none;"><video title="Advertisement" webkit-playsinline="true" playsinline="true" style="background-color: rgb(0, 0, 0); position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;"></video><div style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;"></div></div><div style="display: none;"><video title="Advertisement" webkit-playsinline="true" playsinline="true" style="background-color: rgb(0, 0, 0); position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;"></video><div style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;"></div></div><iframe src="./bridge3.433.1_en.html" allowfullscreen="" allow="autoplay" style="border: 0px; opacity: 0; margin: 0px; padding: 0px; position: relative; color-scheme: light;"></iframe></div></div><button class="rmp-button rmp-overlay-button rmp-color-bg" type="button" aria-label="Play" style="opacity: 1; visibility: visible;"><span class="rmp-i rmp-i-play"></span></button><div class="rmp-loading-spin rmp-color-bg"><div class="rmp-loading-spin-bounce rmpBounce1 rmp-color-bg-button"></div><div class="rmp-loading-spin-bounce rmpBounce2 rmp-color-bg-button"></div></div><div class="rmp-control-bar rmp-color-bg"><button class="rmp-play-pause rmp-button rmp-i rmp-i-play" type="button" aria-label="Play"><div class="rmp-control-bar-hint rmp-color-bg" style="margin-left: 0px; left: 4px;">Play</div></button><button class="rmp-button rmp-desktop-volume-icon rmp-i rmp-i-off-volume" type="button" aria-label="Unmute"><div class="rmp-desktop-volume-container rmp-color-bg" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-label="Volume" aria-valuenow="0" aria-valuetext="0%"><div class="rmp-desktop-volume-bar-container"><div class="rmp-desktop-volume-bar" style="height: 0%;"><div class="rmp-desktop-volume-handle rmp-color-bg-button"></div></div></div><div class="rmp-desktop-volume-indicator rmp-color-bg">0%</div><div class="rmp-desktop-volume-hint rmp-color-bg" style="margin-left: -11.5px;">Volume</div></div></button><div class="rmp-time-elapsed rmp-color-bg" style="display: none;"><span class="rmp-time-elapsed-text">00:00</span></div><div class="rmp-seek-bar" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-label="Seek Bar" style="display: none;"><div class="rmp-time-total"><div class="rmp-loaded"></div><div class="rmp-current rmp-color-bg-button"></div><div class="rmp-handle rmp-color-bg-button"></div><div class="rmp-indicator rmp-color-bg"><span class="rmp-time-indicator"></span></div></div></div><div class="rmp-duration rmp-color-bg" style="display: none;">00:00</div><button class="rmp-fullscreen rmp-button rmp-i rmp-i-resize-full" type="button" aria-label="Full Screen"><div class="rmp-control-bar-hint rmp-color-bg" style="right: auto; left: 50%;">Full Screen</div></button><div class="rmp-ad-info" style="display: none;"><span class="rmp-ad-info-message">Ad</span></div></div></div>
+<script>
+    jQuery(document).ready(function () {
+        InitAds('vnnplayer', getQuery('vast'));
+    });
+</script>
+<script type="text/javascript">
+    var count = jQuery("#vmcContent p").length;
+    var idx = Math.round(count * 0.67);
+    jQuery(jQuery("#vmcContent p")[idx]).after('<div id="AdsInRead" style="text-align: center;display:none;"><iframe vast="https://delivery.yomedia.vn/vast?pid=ea95ed43410d4fd58fc96b20da2c03f8&vast=3&ec=0&ref=https://2sao.vn/&w=[player_width]&h=[player_height]&aaid=[yo_device_aaid]&idfa=[yo_device_idfa]" onload="inreadCloseAds()" width="600" height="338" src="https://embed.vietnamnettv.vn/vastxml/inreadplayer.html" marginwidth="0" allowtransparency="true" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no"></iframe></div>');
+    function inreadCloseAds() {
+        this.addEventListener("message",
+            function receiveMessage(event) {
+                var done = event.data.closeAds;
+                var started = event.data.openAds;
+                console.log(done);
+                console.log(started);
+                if (started) {
+                    $("#AdsInRead").css("display", "");
+                }
+                if (done) {
+                    $("#AdsInRead").remove();
+                }
+            });
+    }
+</script>
+ 
+
+        <iframe name="google_video_inner_static_iframe" id="google_video_inner_static_iframe" src="./saved_resource(9).html" style="height: 0px; width: 0px; display:none"></iframe></body></html>

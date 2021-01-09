@@ -1,0 +1,17 @@
+var mobile = function () { return { detect: function () { for (var a = navigator.userAgent.toLowerCase(), b = this.mobiles, c = !1, d = 0; d < b.length; d += 1) a.indexOf(b[d]) != -1 && (c = !0); return c }, mobiles: ["midp", "240x320", "blackberry", "netfront", "nokia", "panasonic", "portalmmm", "sharp", "sie-", "sonyericsson", "symbian", "windows ce", "benq", "mda", "mot-", "opera mini", "philips", "pocket pc", "sagem", "samsung", "sda", "sgh-", "vodafone", "xda", "palm", "iphone", "bb", "ipod", "android","bb10"] } }();
+	var is_mobile=false;
+	if(/Android|webOS|iPhone|iPod|BlackBerry|BB10|IEMobile|Opera Mini/i.test(navigator.userAgent)){is_mobile=true;}
+	var is_tablet=false;
+	if(/iPad|Tablet/i.test(navigator.userAgent)){is_tablet=true;is_mobile=true;}
+	//if(/Android/i.test(navigator.userAgent) && window.matchMedia('(min-width: 768px)').matches){is_tablet=true;is_mobile=false;}
+	//if(window.matchMedia('(max-width: 768px)').matches){is_tablet=true;is_mobile=false;}
+	
+var is_hostweb = (window.location.hostname=="vietnamnet.vn");
+var is_hostmobile = (window.location.hostname=="m.vietnamnet.vn");
+	
+	if ( is_hostweb && is_mobile){ window.location = window.location.href.replace('https://', 'https://m.');}
+	if ( is_hostmobile && !is_mobile){ window.location = window.location.href.replace('https://m.', 'https://');}
+	
+
+
+

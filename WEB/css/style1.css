@@ -1,0 +1,97 @@
+body{
+    background: #FFA500;
+    font-family: Times new roman;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px; 
+}
+.menu_top {
+    margin-top: 0px;
+    background: #141414;
+    height: 40px;
+}
+.menu_top ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu_top ul li {
+    list-style: none;
+    float: left;
+}
+.menu_top ul li a {
+    text-decoration: none;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    color: #FFF;
+    padding: 0px 20px 0px 20px;
+    border-right: 1px solid #ccc; 
+    font-size: 15px;
+    font-weight: bold;
+}
+table, th, td{
+    border:1px solid white;
+    margin-left: 14%;
+}
+table{
+    border-collapse:collapse;
+    width:70%;
+}
+th, td{
+    padding:10px;
+    text-align: center;
+}
+th{
+    font-weight: bold;
+    font-size: 20px;
+    color: red;
+}
+table tr:nth-child(odd){
+    background-color:#eee;
+}
+table tr:nth-child(even){
+    background-color:white;
+}
+table tr:nth-child(1){
+    background-color:skyblue;
+}
+button{
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: #167bff;
+}
+ button:hover{
+    width: 75px;
+    height: 35px;
+}
+button a{
+    text-decoration: none;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    color: #FFF;
+    font-size: 15px;
+    font-weight: bold;
+}
+.add button{
+    margin-top: 20px;
+    width: 350px;
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid white;
+    background-color: skyblue;
+    margin-left: 35%;
+}
+.add button a{
+    text-decoration: none;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    color: red;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: Times new roman;
+}

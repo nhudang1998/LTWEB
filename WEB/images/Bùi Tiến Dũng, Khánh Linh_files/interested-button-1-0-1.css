@@ -1,0 +1,8 @@
+.shareBoxInline .btnLike {
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+.shareBoxInline .num {
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}

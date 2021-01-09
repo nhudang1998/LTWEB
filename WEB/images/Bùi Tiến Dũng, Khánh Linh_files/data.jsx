@@ -1,0 +1,1 @@
+retvar={"Domain":"vietnamnet.vn","WebsiteCode":"VietNamNet","ArticleId":703895,"CateAlias":"the-thao","Url":"https://vietnamnet.vn/vn/the-thao/bong-da-viet-nam/doi-tuyen-viet-nam/bui-tien-dung-khanh-linh-dep-lung-linh-trong-le-cuoi-o-bac-ninh-703895.html","Action":"view","Ip":"14.250.206.129","ActionDate":"2021-01-08 15:34:47"}

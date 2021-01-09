@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- saved from url=(0474)https://id.vietnamnet.vn/SetCookie.html?title=B%C3%B9i%20Ti%E1%BA%BFn%20D%C5%A9ng%20h%E1%BA%A1nh%20ph%C3%BAc%20n%C3%A2ng%20v%C3%A1y%20cho%20c%C3%B4%20d%C3%A2u%20Kh%C3%A1nh%20Linh&images=https%3A%2F%2Fvnn-imgs-f.vgcloud.vn%2F2021%2F01%2F08%2F11%2Fbui-tien-dung-hanh-phuc-nang-vay-cho-co-dau-khanh-linh-11.JPG&link=https%3A%2F%2Fvietnamnet.vn%2Fvn%2Fthe-thao%2Fbong-da-viet-nam%2Fdoi-tuyen-viet-nam%2Fbui-tien-dung-khanh-linh-dep-lung-linh-trong-le-cuoi-o-bac-ninh-703895.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>VNN-ID SetCookie</title>
+    <link type="image/x-icon" href="https://id.vietnamnet.vn/images/faviconvnn2018.ico" rel="shortcut icon">
+    <meta name="viewport" content="width=device-width, minimum-scale=0.3, maximum-scale=5, initial-scale=1.0, user-scalable=yes">
+    <script src="./jquery-2.2.4.min.js.download"></script>
+    <script>
+        //set cookie id-vnn
+        function setCookie(cname,cvalue,exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*1000*60*60*24));
+            var expires = "expires=" + d.toGMTString(); 
+            window.document.cookie = cname+"="+cvalue+"; "+expires+"; path=https://id.vietnamnet.vn";
+        }
+        function getCookie(cname) {
+          var name = cname + "=";
+          var decodedCookie = decodeURIComponent(document.cookie);
+          var ca = decodedCookie.split(';');
+          for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+            }
+          }
+          return "";
+        } 
+        function GetCookieNews() {
+	        var a = getCookie("SetCookieNews");
+	        if (a != ''){
+		        var b = JSON.parse(a);
+		        if (b instanceof Array ) return b;
+	        }
+	        return [];
+        }
+        function SetCookieNews(arr) {
+	        var new_str = JSON.stringify(arr);
+	        setCookie('SetCookieNews', new_str, 30);
+        }
+        function AddCookieNews(n) {
+            var g = GetCookieNews();
+            for (i = 0; i < g.length; i++) {
+                if (g[i].title == getUrlParameter('title')) return
+            }
+	        g.push(n);
+	        while (g.length > 5) g.shift();
+	        SetCookieNews(g);
+        }
+        function getUrlParameter(sParam) {
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
+            }
+        };
+        var news =  {
+	        title: getUrlParameter('title'), 
+	        images: getUrlParameter('images'),
+ 	        link: getUrlParameter('link')
+        };
+        $(document).ready(function() {
+	        AddCookieNews(news);
+        });
+    </script>
+</head>
+<body>
+    <p style="text-align:center;">Trang này không tồn tại. Hãy quay về <a href="https://vietnamnet.vn/">Vietnamnet</a></p>
+
+</body></html>
